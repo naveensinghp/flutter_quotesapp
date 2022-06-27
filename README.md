@@ -1,6 +1,6 @@
 # flutter_quotegenerator
 
-A new Flutter project.
+A Genaral Idea of App is to Generate the Quotes, Based on the Remainder Sets in the App.
 
 ## Getting Started
 
