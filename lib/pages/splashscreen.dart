@@ -13,12 +13,11 @@ class SplashScreen extends StatelessWidget {
             maxHeight: MediaQuery.of(context).size.height),
         context: context,
         orientation: Orientation.portrait);
-    
     return  Scaffold(
       body: Center(child: Text('Spash Screen',
       style: TextStyle(
         fontSize: 20.sp,
-        fontFamily: gilory,
+        fontFamily: cred,
         ),
       ),),
     );
