@@ -1,6 +1,6 @@
 # Flutter QuoteGenerator APP
 
-A Genaral Idea of App is to Generate the Quotes, Based on the Remainder Sets in the App.
+A Genaral Idea of App is to Generate the Quotes, Based on the User Setting the Remainders in the App.
 
 ## List of Pages For the App
 
