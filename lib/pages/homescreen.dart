@@ -18,16 +18,41 @@ class HomeScreen extends StatelessWidget {
     return  Scaffold(
       backgroundColor: violetColor,
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Hi there,',
-              style: headingText1.copyWith(
-                color: Colors.white,
-                fontFamily: cred,
-                fontSize: 25.sp,
-              ),
-              textScaleFactor: 1.0,
+          Padding(
+            padding: const EdgeInsets.only(top: 70),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                  Icon(
+                    Icons.mood,
+                    size: 40.sp,
+                    color: Colors.white,
+                  ),
+                  SizedBox(height: 15.h,),
+                  Text('Hi there,',
+                  style: headingText1.copyWith(
+                      color: Colors.white,
+                      fontFamily: cred,
+                      fontSize: 20.sp,
+                    ),
+                    textScaleFactor: 1.2,
+                  ),
+                  Text('I\'m Reflectly,',
+                  style: headingText1.copyWith(
+                      color: Colors.white,
+                      fontFamily: cred,
+                      fontSize: 20.sp,
+                    ),
+                    textScaleFactor: 1.2,
+                  ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),

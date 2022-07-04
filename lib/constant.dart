@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 const lightBlackColor = Color(0xFF2c3130);
 const violetColor = Color(0xFF7f84e0);
