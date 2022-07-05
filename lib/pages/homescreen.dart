@@ -49,14 +49,50 @@ class HomeScreen extends StatelessWidget {
                     ),
                     textScaleFactor: 1.2,
                   ),
+                  SizedBox(height: 20.h,),
+                  Text('Your new personal \nSelf care companion',
+                  style: headingText1.copyWith(
+                      color: lightVioletColor,
+                      fontFamily: cred,
+                      fontSize: 15.sp,
+                    ),
+                    textScaleFactor: 1.2,
+                    ),
                   ],
                 ),
               ],
             ),
           ),
+          bottomStuff(),
         ],
       ),
     );
   }
+
+  Widget bottomStuff(){
+    return Container(
+      width: 180.h,
+      height: 140.h,
+      padding: EdgeInsets.only(bottom: 0,top: 120),
+      child: ElevatedButton(
+        onPressed: () {},
+        child:  Text('HI, REFLECTLY!',
+                  style: headingText1.copyWith(
+                      color: homebtnTextColor,
+                      fontFamily: cred,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12.sp,
+                    ),
+                    textScaleFactor: 1.2,
+                  ),
+        style: ElevatedButton.styleFrom(
+          primary: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(35),
+          ),
+        ),
+      ),
+    );
+  } 
 
 }
