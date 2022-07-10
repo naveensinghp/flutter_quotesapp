@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
-import 'package:flutter_quotegenerator/pages/signup/manualsignup.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; 
 
 
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class ManualSignup extends StatelessWidget {
+  const ManualSignup({Key? key}) : super(key: key);
 
 
   @override
@@ -35,52 +34,28 @@ class HomeScreen extends StatelessWidget {
                     color: Colors.white,
                   ),
                   SizedBox(height: 15.h,),
-                  Text('Hi there,',
+                  Text('So nice to meet you!,',
                   style: headingText1.copyWith(
                       color: Colors.white,
                       fontFamily: cred,
-                      fontSize: 20.sp,
-                    ),
-                    textScaleFactor: 1.2,
-                  ),
-                  Text('I\'m Reflectly,',
-                  style: headingText1.copyWith(
-                      color: Colors.white,
-                      fontFamily: cred,
-                      fontSize: 20.sp,
+                      fontSize: 16.sp,
                     ),
                     textScaleFactor: 1.2,
                   ),
                   SizedBox(height: 20.h,),
-                  Text('Your new personal',
-                  style: headingText1.copyWith(
-                      color: lightVioletColor,
-                      fontFamily: cred,
-                      fontSize: 15.sp,
-                    ),
-                    textScaleFactor: 1.2,
-                    ),
-                    Text('Self care companion',
-                  style: headingText1.copyWith(
-                      color: lightVioletColor,
-                      fontFamily: cred,
-                      fontSize: 15.sp,
-                    ),
-                    textScaleFactor: 1.2,
-                    ),
                   ],
                 ),
               ],
             ),
           ),
           SizedBox(height: 50.h,),
-          bottomStuff(context),
+          bottomStuff(),
         ],
       ),
     );
   }
 
-  Widget bottomStuff(context){
+  Widget bottomStuff(){
     return Column(
       children: [
         Container(
@@ -89,9 +64,7 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 0,top: 120),
           child: ElevatedButton(
             onPressed: () {
-              Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const ManualSignup()),
-            );
+              print('clicked');
             },
             child:  Text('HI, REFLECTLY!',
                       style: headingText1.copyWith(
