@@ -21,33 +21,88 @@ class ManualSignup extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 110),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+            padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 90),
+            child: Column(
               children: [
-                Column(
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                  Icon(
-                    Icons.mood,
-                    size: 40.sp,
-                    color: Colors.white,
-                  ),
-                  SizedBox(height: 15.h,),
-                  Text('So nice to meet you!,',
+                      Icon(
+                        Icons.keyboard_backspace,
+                        size: 30.sp,
+                        color: lightVioletColor,
+                      ),
+                      const Spacer(),
+                      Icon(
+                        Icons.mood,
+                        size: 42.sp,
+                        color: Colors.white,
+                      ),
+                      const Spacer(),
+                  ],
+                ),
+                SizedBox(height: 15.h,),
+                Text('So nice to meet you!, What do',
                   style: headingText1.copyWith(
                       color: Colors.white,
                       fontFamily: cred,
-                      fontSize: 16.sp,
+                      fontSize: 15.sp,
                     ),
                     textScaleFactor: 1.2,
                   ),
-                  SizedBox(height: 20.h,),
-                  ],
+                Text('your friends call you?',
+                style: headingText1.copyWith(
+                    color: Colors.white,
+                    fontFamily: cred,
+                    fontSize: 15.sp,
+                  ),
+                  textScaleFactor: 1.2,
                 ),
               ],
             ),
           ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 110),
+          //   child: Row(
+          //     crossAxisAlignment: CrossAxisAlignment.center,
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //       Column(
+          //         children: [
+          //         // Icon(
+          //         //   Icons.keyboard_backspace,
+          //         //   size: 40.sp,
+          //         //   color: Colors.white,
+          //         // ),
+          //         // Icon(
+          //         //   Icons.mood,
+          //         //   size: 40.sp,
+          //         //   color: Colors.white,
+          //         // ),
+          //         SizedBox(height: 15.h,),
+          //         Text('So nice to meet you!, What do',
+          //         style: headingText1.copyWith(
+          //             color: Colors.white,
+          //             fontFamily: cred,
+          //             fontSize: 15.sp,
+          //           ),
+          //           textScaleFactor: 1.2,
+          //         ),
+          //         Text('your friends call you?',
+          //         style: headingText1.copyWith(
+          //             color: Colors.white,
+          //             fontFamily: cred,
+          //             fontSize: 15.sp,
+          //           ),
+          //           textScaleFactor: 1.2,
+          //         ),
+          //         SizedBox(height: 20.h,),
+          //         ],
+          //       ),
+          //     ],
+          //   ),
+          // ),
           SizedBox(height: 50.h,),
           bottomStuff(),
         ],
@@ -66,7 +121,7 @@ class ManualSignup extends StatelessWidget {
             onPressed: () {
               print('clicked');
             },
-            child:  Text('HI, REFLECTLY!',
+            child:  Text('Continue',
                       style: headingText1.copyWith(
                           color: homebtnTextColor,
                           fontFamily: cred,
@@ -84,16 +139,6 @@ class ManualSignup extends StatelessWidget {
           ),
         ),
         SizedBox(height: 20.h,),
-        Text(
-            'I ALREADY HAVE AN ACCOUNT!',
-            style: headingText1.copyWith(
-             color: lightVioletColor,
-            fontFamily: cred,
-            fontWeight: FontWeight.w500,
-            fontSize: 12.sp,
-            ),
-            textScaleFactor: 1.2,
-          ),
       ],
     );
   } 
