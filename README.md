@@ -10,4 +10,4 @@ A Genaral Idea of App is to Generate the Quotes, Based on the User Setting the R
 4. Dashboard Page
 5. Change Profile Picture
 6. Notification Remainder
-
+7. To Do List (Set was wallpaper)
