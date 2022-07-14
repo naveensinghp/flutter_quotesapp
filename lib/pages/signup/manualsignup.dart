@@ -30,10 +30,11 @@ class ManualSignup extends StatelessWidget {
                   children: [
                       Icon(
                         Icons.keyboard_backspace,
-                        size: 30.sp,
+                        size: 20.sp,
                         color: lightVioletColor,
                       ),
                       const Spacer(),
+                      
                       Icon(
                         Icons.mood,
                         size: 42.sp,

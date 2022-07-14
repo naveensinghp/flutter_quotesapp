@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/pages/homescreen.dart';
 import 'package:flutter_quotegenerator/pages/splashscreen.dart';
+import 'package:introduction_screen/introduction_screen.dart';
 
 
 void main() {
@@ -20,8 +21,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      //home: const SplashScreen(),
-      home: const HomeScreen(),
+      home: const SplashScreen(),
+      // home: const HomeScreen(),
     );
   }
 }
