@@ -8,11 +8,13 @@ List<PageViewModel> getPage(){
   return [
      PageViewModel(
       // image: Image.network('https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
-      title: "Sfeg",
+      
+      title: "Test",
+
       bodyWidget: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.symmetric(vertical: 110),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -75,7 +77,7 @@ List<PageViewModel> getPage(){
     //   body: 'Subscribe TOday',
     //   footer: Text('test'),
     //  ),
-  
+     
   ];
 }
 
@@ -100,7 +102,7 @@ List<PageViewModel> getPage(){
         onDone: () {},
         pages: getPage(),
         globalBackgroundColor: violetColor,
-        next: const SplashScreen(),
+        next: SplashScreen(),
       )
     );
   }
