@@ -16,11 +16,12 @@ class IntroductionScreen extends StatelessWidget {
         orientation: Orientation.portrait);
     return  Scaffold(
       body: Center(child: Text('Spash Screen',
-      style: TextStyle(
-        fontSize: 20.sp,
-        fontFamily: cred,
+          style: TextStyle(
+          fontSize: 20.sp,
+          fontFamily: cred,
+          ),
         ),
-      ),),
+      ),
     );
   }
 

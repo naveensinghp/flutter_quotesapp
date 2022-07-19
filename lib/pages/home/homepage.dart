@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
+import 'package:flutter_quotegenerator/pages/profile/myprofile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
@@ -24,12 +25,12 @@ class HomePageScreen extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(12)
             ),
-            child: pageMenu()),
-          
-        )
+            child: pageMenu(context)),
+        ),
+        elevation: 0,
       ),
-      backgroundColor: Colors.orangeAccent,
-      body: Center(child: Text('Spash Screen',
+      backgroundColor: Colors.white,
+        body: Center(child: Text('Hi NaveenSingh',
           style: TextStyle(
           fontSize: 20.sp,
           fontFamily: cred,
@@ -40,15 +41,22 @@ class HomePageScreen extends StatelessWidget {
   }
 
 
-  Widget pageMenu(){
+  Widget pageMenu(context){
     return Padding(
         padding: const EdgeInsets.only(bottom: 0,),
         child: Container(
           height: 60.h,
           width: 320.w,
           decoration: BoxDecoration(
-            // color: Colors.white,
+            boxShadow: const<BoxShadow>[
+            BoxShadow(
+              color: Colors.grey,
+              blurRadius: 10,
+            ),
+          ],
+            color: Colors.white,
             borderRadius: BorderRadius.circular(12)
+            
           ),
           child: Row(
             //  crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,24 +127,30 @@ class HomePageScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(width: 50.w,),
-                    Column(
-                       crossAxisAlignment: CrossAxisAlignment.center,
-                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                          Icon(
-                          Icons.person_pin,
-                          size: 22.sp,
-                          color:const Color(0xFF0a060a),
-                        ),
-                        SizedBox(height: 5.h,),
-                        Text('profile',
-                        style: TextStyle(
-                            fontSize: 14.sp,
-                            fontFamily: lightfont,
-                            fontWeight: FontWeight.normal
+                    InkWell(
+                      onTap: (){
+                        // print('tapped');
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => const MyProfile()));
+                      },
+                      child: Column(
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                            Icon(
+                            Icons.person_pin,
+                            size: 22.sp,
+                            color:const Color(0xFF0a060a),
                           ),
-                        ),
-                      ],
+                          SizedBox(height: 5.h,),
+                          Text('profile',
+                          style: TextStyle(
+                              fontSize: 14.sp,
+                              fontFamily: lightfont,
+                              fontWeight: FontWeight.normal
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
