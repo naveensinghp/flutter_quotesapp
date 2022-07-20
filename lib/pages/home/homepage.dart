@@ -87,7 +87,7 @@ class HomePageScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                   SizedBox(width: 30.w,),
+                   SizedBox(width: 20.w,),
                     Column(
                        crossAxisAlignment: CrossAxisAlignment.center,
                        mainAxisAlignment: MainAxisAlignment.end,
@@ -98,7 +98,7 @@ class HomePageScreen extends StatelessWidget {
                           color:const Color(0xFF0a060a),
                         ),
                         SizedBox(height: 5.h,),
-                        Text('To Do',
+                        Text('to do',
                         style: TextStyle(
                             fontSize: 12.sp,
                             fontFamily: lightfont,
@@ -107,7 +107,7 @@ class HomePageScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(width: 30.w,),
+                    SizedBox(width: 20.w,),
                     Column(
                        crossAxisAlignment: CrossAxisAlignment.center,
                        mainAxisAlignment: MainAxisAlignment.end,
@@ -127,7 +127,27 @@ class HomePageScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(width: 50.w,),
+                    SizedBox(width: 20.w,),
+                    Column(
+                       crossAxisAlignment: CrossAxisAlignment.center,
+                       mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                          Icon(
+                          Icons.bolt,
+                          size: 22.sp,
+                          color:const Color(0xFF0a060a),
+                        ),
+                        SizedBox(height: 5.h,),
+                        Text('my creed',
+                        style: TextStyle(
+                            fontSize: 14.sp,
+                            fontFamily: lightfont,
+                            fontWeight: FontWeight.normal
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 20.w,),
                     InkWell(
                       onTap: (){
                         // print('tapped');

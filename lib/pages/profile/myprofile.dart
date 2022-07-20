@@ -13,11 +13,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
       backgroundColor: profilePageBgColor,
       body: Row(
         children: [
-           profileAvatar(),
-           const Spacer(),
-           settings(),
-           SizedBox(width: 20.w,),
-           closeButton(context),
+           Column(
+             children: [
+               profileAvatar(),
+             ],
+           ),
+          //  const Spacer(),
+          //  settings(),
+          //  SizedBox(width: 10.w,),
+          //  closeButton(context),
+          //  SizedBox(width: 20.w,),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 120,left: 50),
+                child: Row(
+                  children: [
+                     settings(),
+                     SizedBox(width: 10.w,),
+                     closeButton(context),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -25,7 +44,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
   Widget profileAvatar(){
     return Container(
-      width: 190.w,
+      width: 180.w,
       height: 150.h,
       child: Center(child: Icon(
                     Icons.person,
@@ -33,30 +52,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
                     color: const Color(0xFF01c0c9),
                   ),
                 ),
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-           begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Color(0xFF00c6d4),
-                Color(0xFF00dcd3),
-          ]
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Color(0xFF00c6d4),
+                  Color(0xFF00dcd3),
+            ]
+          ),
+          color: Colors.green,
+          borderRadius: BorderRadius.only(
+          topLeft: Radius.zero,
+          topRight: Radius.zero,
+          bottomLeft: Radius.zero,
+          bottomRight: Radius.circular(20.0.h),
+          )
         ),
-        color: Colors.green,
-        borderRadius: BorderRadius.only(
-        topLeft: Radius.zero,
-        topRight: Radius.zero,
-        bottomLeft: Radius.zero,
-        bottomRight: Radius.circular(20.0.h),
-        )
-      ),
     );
   }
 
   Widget settings(){
     return Container(
-      width: 50.h,
-      height: 50.h,
+      width: 42.h,
+      height: 42.h,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: const<BoxShadow>[
@@ -76,8 +95,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
   }
   Widget closeButton(context){
     return Container(
-      width: 50.h,
-      height: 50.h,
+      width: 42.h,
+      height: 42.h,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: const<BoxShadow>[
@@ -91,6 +110,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
       child: IconButton(
           icon: const Icon(Icons.close),
           tooltip: 'Increase volume by 10',
+          iconSize: 28,
+          color: buttonIconColor,
           onPressed: () {
             Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePageScreen()));
           },
