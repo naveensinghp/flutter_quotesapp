@@ -11,32 +11,40 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: profilePageBgColor,
-      body: Row(
+      // body: Row(
+      //   children: [
+      //      Column(
+      //        children: [
+      //          profileAvatar(),
+      //        ],
+      //      ),
+      //     //  const Spacer(),
+      //     //  settings(),
+      //     //  SizedBox(width: 10.w,),
+      //     //  closeButton(context),
+      //     //  SizedBox(width: 20.w,),
+         
+      //     Column(
+      //       children: [
+      //         Padding(
+      //           padding: const EdgeInsets.only(top: 120,left: 50),
+      //           child: Row(
+      //             children: [
+      //                settings(),
+      //                SizedBox(width: 10.w,),
+      //                closeButton(context),
+      //             ],
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ],
+      // ),
+      body: Column(
         children: [
-           Column(
-             children: [
-               profileAvatar(),
-             ],
-           ),
-          //  const Spacer(),
-          //  settings(),
-          //  SizedBox(width: 10.w,),
-          //  closeButton(context),
-          //  SizedBox(width: 20.w,),
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 120,left: 50),
-                child: Row(
-                  children: [
-                     settings(),
-                     SizedBox(width: 10.w,),
-                     closeButton(context),
-                  ],
-                ),
-              ),
-            ],
-          ),
+          Center(child: nameEdit()),
+          SizedBox(height: 50.h,),
+          cardTest(),
         ],
       ),
     );
@@ -118,4 +126,94 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
         ),
     );
   }
+
+  Widget nameEdit(){
+    return Container(
+      width: 300.sp,
+      height: 200.h,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(18),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Container(
+              width: 250.w,
+              height: 50.h,
+              decoration: BoxDecoration(
+                color: const Color(0xFFf6f7f8),
+                borderRadius: BorderRadius.circular(12)
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text('NaveenSingh',
+                  style: headingText1.copyWith(
+                      color: const Color(0xFF56617a),
+                      fontFamily: cred,
+                      fontSize: 14.sp,
+                    ),
+                    textScaleFactor: 1.2,
+                  ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Container(
+              width: 250.w,
+              height: 50.h,
+              decoration: BoxDecoration(
+                color: const Color(0xFFf6f7f8),
+                borderRadius: BorderRadius.circular(12)
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text('naveensingh.mtp',
+                  style: headingText1.copyWith(
+                      color: const Color(0xFFafb4bf),
+                      fontFamily: cred,
+                      fontSize: 14.sp,
+                    ),
+                    textScaleFactor: 1.2,
+                  ),
+              ),
+            ),
+          )
+        ],
+      ),
+    
+    );
+  }
+  Widget cardTest(){
+      return Container(
+        width: 300.sp,
+        height: 80.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20)
+        ),
+        child: Row(
+          children: [
+            Text('Reflectly Basic',
+                style: headingText1.copyWith(
+                    color: const Color(0xFFafb4bf),
+                    fontFamily: cred,
+                    fontSize: 14.sp,
+                  ),
+                  textScaleFactor: 1.2,
+              ),
+              Spacer(),
+            Icon(
+                Icons.fingerprint,
+                size: 100.sp,
+                color: const Color(0xFFfafbfb),
+              ),
+              
+          ],
+        ),
+      );
+    }
 }
