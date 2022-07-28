@@ -40,13 +40,61 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
       //     ),
       //   ],
       // ),
-      body: Column(
+      body: Stack(
         children: [
-          Center(child: nameEdit()),
-          SizedBox(height: 50.h,),
-          cardTest(),
+          Positioned(
+            top: 0,
+            left: 0,
+            child:  profileAvatar(),
+          ),
+          Positioned(
+            top: 70,
+            left: 200,
+            right: 0,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                settings(),
+                 SizedBox(width: 10.w,),
+                closeButton(context)
+              ],
+           ),
+          ),
+           Positioned(
+            top: 150,
+            left: 200,
+            right: 0,
+            child: Center(
+              child: Text('NaveenSingh',
+                      style: headingText1.copyWith(
+                        color: Colors.black,
+                        fontFamily: cred,
+                        fontSize: 16.sp,
+                      ),
+                      textScaleFactor: 1.2,
+                    ),
+            ),
+          ),
+           Positioned(
+           top: 220,
+           right: 30,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  nameEdit()
+              ],
+            ),
+           )
         ],
       ),
+      // body: Column(
+      //   children: [
+      //     Center(child: nameEdit()),
+      //     SizedBox(height: 50.h,),
+      //     cardTest(),
+      //   ],
+      // ),
     );
   }
 
