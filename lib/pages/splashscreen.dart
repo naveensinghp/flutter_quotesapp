@@ -8,9 +8,7 @@ List<PageViewModel> getPage(){
   return [
      PageViewModel(
       // image: Image.network('https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
-      
-      title: "Test",
-
+      title: "",
       bodyWidget: Column(
         children: [
           Padding(
@@ -69,7 +67,7 @@ List<PageViewModel> getPage(){
          
         ],
       ),
-      footer: Text('test'),
+      // footer: Text('test'),
      ),
     //  PageViewModel(
     //   image: Image.network('https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
@@ -96,13 +94,14 @@ List<PageViewModel> getPage(){
         done: Text('Done',
             style: TextStyle(
              fontSize: 20.sp,
+            color: Colors.white,
             fontFamily: cred,
           ),
         ),
         onDone: () {},
         pages: getPage(),
         globalBackgroundColor: violetColor,
-        next: SplashScreen(),
+        next: const SplashScreen(),
       )
     );
   }

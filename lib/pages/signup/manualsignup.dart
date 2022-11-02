@@ -120,7 +120,7 @@ class ManualSignup extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 0,top: 120),
           child: ElevatedButton(
             onPressed: () {
-              print('clicked');
+              // print('clicked');
             },
             child:  Text('Continue',
                       style: headingText1.copyWith(

@@ -253,7 +253,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
                   ),
                   textScaleFactor: 1.2,
               ),
-              Spacer(),
+              const Spacer(),
             Icon(
                 Icons.fingerprint,
                 size: 100.sp,
