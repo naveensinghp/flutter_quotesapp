@@ -31,7 +31,8 @@ class HomePageScreen extends StatelessWidget {
         elevation: 0,
       ),
       backgroundColor: Colors.white,
-        body: Center(child: Text('Hi NaveenSingh',
+        body: Center(child: 
+          Text('Hi NaveenSingh',
           style: TextStyle(
           fontSize: 20.sp,
           fontFamily: cred,
@@ -138,7 +139,7 @@ class HomePageScreen extends StatelessWidget {
                           color:const Color(0xFF0a060a),
                         ),
                         SizedBox(height: 5.h,),
-                        Text('my creed',
+                        Text('Qutoes',
                         style: TextStyle(
                             fontSize: 14.sp,
                             fontFamily: lightfont,
