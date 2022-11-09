@@ -10,6 +10,7 @@ const cred = 'gilroy';
 const lightfont = 'gilroylight';
 const buttonIconColor = Color(0xFF46526d);
 const profilePageBgColor = Color(0xFFf2f7fb);
+const iconColor = Color(0xFF46526d);
 
 
 TextStyle headingText1 = const TextStyle(fontFamily: cred);
