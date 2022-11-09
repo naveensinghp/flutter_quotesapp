@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
 import 'package:flutter_quotegenerator/pages/home/homepage.dart';
+import 'package:flutter_quotegenerator/pages/profile/editprofile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
@@ -55,7 +56,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                settings(),
+                settings(context),
                  SizedBox(width: 10.w,),
                 closeButton(context)
               ],
@@ -128,7 +129,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
     );
   }
 
-  Widget settings(){
+  Widget settings(context){
     return Container(
       width: 42.h,
       height: 42.h,
@@ -142,11 +143,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
         ],
         borderRadius: BorderRadius.circular(16)
       ),
-      child: Icon(
-              Icons.tune,
-              size: 25.sp,
-              color: buttonIconColor,
-            ),
+      child: IconButton(
+          icon: const Icon(Icons.tune),
+          tooltip: 'Increase volume by 10',
+          iconSize: 28,
+          color: buttonIconColor,
+          onPressed: () {
+            Navigator.push(context,MaterialPageRoute(builder: (context) => const EditProfile()));
+          },
+        ),
     );
   }
   Widget closeButton(context){
