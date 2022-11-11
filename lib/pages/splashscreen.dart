@@ -7,77 +7,78 @@ class SplashScreen extends StatelessWidget {
 List<PageViewModel> getPage(){
   return [
      PageViewModel(
-      // image: Image.network('https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
-      title: "",
-      bodyWidget: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 110),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                  Icon(
-                    Icons.mood,
-                    size: 40.sp,
-                    color: Colors.white,
-                  ),
-                  SizedBox(height: 15.h,),
-                  Text('Hi there,',
-                  style: headingText1.copyWith(
-                      color: Colors.white,
-                      fontFamily: cred,
-                      fontSize: 20.sp,
-                    ),
-                    textScaleFactor: 1.2,
-                  ),
-                  Text('I\'m Reflectly,',
-                  style: headingText1.copyWith(
-                      color: Colors.white,
-                      fontFamily: cred,
-                      fontSize: 20.sp,
-                    ),
-                    textScaleFactor: 1.2,
-                  ),
-                  SizedBox(height: 20.h,),
-                  Text('Your new personal',
-                  style: headingText1.copyWith(
-                      color: lightVioletColor,
-                      fontFamily: cred,
-                      fontSize: 15.sp,
-                    ),
-                    textScaleFactor: 1.2,
-                    ),
-                    Text('Self care companion',
-                  style: headingText1.copyWith(
-                      color: lightVioletColor,
-                      fontFamily: cred,
-                      fontSize: 15.sp,
-                    ),
-                    textScaleFactor: 1.2,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 50.h,),
-         
-        ],
-      ),
-      // footer: Text('test'),
+      image: buildImage('assets/images/logoblack.png'),
+      title: "Welcome, This App helps your belief on about yourself",
+      body: "This App Helps you connect, Worldwide dummy text",
+      decoration: getPageDecoration(),
+       // bodyWidget: Column(
+       //   children: [
+       //     buildImage('assets/images/logoblack.png'),
+       //   ],
+       // )
      ),
-    //  PageViewModel(
-    //   image: Image.network('https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
-    //   title: "Test",
-    //   body: 'Subscribe TOday',
-    //   footer: Text('test'),
-    //  ),
-     
+    PageViewModel(
+      image: buildImage('assets/images/logoblack.png'),
+      title: "Welcome, This App helps your belief on about yourself",
+      body: "This App Helps you connect, Worldwide dummy text",
+      decoration: getPageDecoration(),
+    ),
+    PageViewModel(
+        title: 'Connect With Everyone',
+        body: 'Here you can have whatever description you would like to have, you can type it all in here',
+        footer: SizedBox(
+          height: 45,
+          width: 300,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: Colors.green,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
+                ),
+                elevation: 8
+            ),
+            onPressed: () {},
+            child: const Text("Let's Go", style: TextStyle(fontSize: 20)),
+          ),
+        ),
+        image: Center(
+          child: Image.asset('assets/images/logoblack.png',width: 220,),
+        ),
+        decoration: const PageDecoration(
+            titleTextStyle: TextStyle(
+              fontSize: 25.0,
+              fontWeight: FontWeight.bold,
+            )
+        )
+    ),
+    PageViewModel(
+      image: buildImage('assets/images/logoblack.png'),
+      title: "Welcome, This App helps your belief on about yourself",
+      body: "This App Helps you connect, Worldwide dummy text",
+      decoration: getPageDecoration(),
+    ),
   ];
 }
+
+Widget buildImage(String path){
+  return Center(
+    child: Image.asset(path,width: 220),
+  );
+}
+
+PageDecoration getPageDecoration() => PageDecoration(
+  titleTextStyle: TextStyle(
+    fontSize: 18.sp,
+    color: const Color(0xFF545454),
+    fontFamily: cred,
+  ),
+  bodyTextStyle: TextStyle(
+    fontSize: 14.sp,
+    color: const Color(0xFF545454),
+    fontFamily: cred,
+  ),
+  titlePadding: EdgeInsets.all(16).copyWith(bottom: 20)
+);
 
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -91,19 +92,38 @@ List<PageViewModel> getPage(){
         orientation: Orientation.portrait);
     return  Scaffold(
       body: IntroductionScreen(
-        done: Text('Done',
-            style: TextStyle(
-             fontSize: 20.sp,
-            color: Colors.white,
+        onDone: () {
+        },
+        pages: getPage(),
+        globalBackgroundColor: Colors.white,
+        // next: const SplashScreen(),
+        dotsDecorator: const DotsDecorator(
+          size: Size(10,10),
+          color: profilePageBgColor,
+          activeSize: Size.square(15),
+            activeColor: Colors.redAccent
+        ),
+        showDoneButton: true,
+        done: Text('Know More',
+          style: TextStyle(
+            fontSize: 14.sp,
+            color: Colors.black,
             fontFamily: cred,
           ),
         ),
-        onDone: () {},
-        pages: getPage(),
-        globalBackgroundColor: violetColor,
-        next: const SplashScreen(),
+        next: const Icon(Icons.arrow_forward,size: 20,),
+        showSkipButton: true,
+        skip: Text('Skip',
+        style: TextStyle(
+        fontSize: 14.sp,
+        color: Colors.black,
+        fontFamily: cred,
+        ),
+      ),
       )
     );
   }
-
+  void onDone(){
+    // Navigator.pushReplacement(context, newRoute)
+  }
 }
