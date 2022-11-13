@@ -70,12 +70,12 @@ PageDecoration getPageDecoration() => PageDecoration(
   titleTextStyle: TextStyle(
     fontSize: 18.sp,
     color: const Color(0xFF545454),
-    fontFamily: cred,
+    fontFamily: gilroy,
   ),
   bodyTextStyle: TextStyle(
     fontSize: 14.sp,
     color: const Color(0xFF545454),
-    fontFamily: cred,
+    fontFamily: gilroy,
   ),
   titlePadding: EdgeInsets.all(16).copyWith(bottom: 20)
 );
@@ -108,7 +108,7 @@ PageDecoration getPageDecoration() => PageDecoration(
           style: TextStyle(
             fontSize: 14.sp,
             color: Colors.black,
-            fontFamily: cred,
+            fontFamily: gilroy,
           ),
         ),
         next: const Icon(Icons.arrow_forward,size: 20,),
@@ -117,7 +117,7 @@ PageDecoration getPageDecoration() => PageDecoration(
         style: TextStyle(
         fontSize: 14.sp,
         color: Colors.black,
-        fontFamily: cred,
+        fontFamily: gilroy,
         ),
       ),
       )

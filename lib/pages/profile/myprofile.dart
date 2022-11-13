@@ -70,7 +70,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
               child: Text('NaveenSingh',
                       style: headingText1.copyWith(
                         color: Colors.black,
-                        fontFamily: cred,
+                        fontFamily: gilroy,
                         fontSize: 16.sp,
                       ),
                       textScaleFactor: 1.2,
@@ -205,7 +205,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
                 child: Text('NaveenSingh',
                   style: headingText1.copyWith(
                       color: const Color(0xFF56617a),
-                      fontFamily: cred,
+                      fontFamily: gilroy,
                       fontSize: 14.sp,
                     ),
                     textScaleFactor: 1.2,
@@ -227,7 +227,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
                 child: Text('naveensingh.mtp',
                   style: headingText1.copyWith(
                       color: const Color(0xFFafb4bf),
-                      fontFamily: cred,
+                      fontFamily: gilroy,
                       fontSize: 14.sp,
                     ),
                     textScaleFactor: 1.2,
@@ -253,7 +253,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
             Text('Reflectly Basic',
                 style: headingText1.copyWith(
                     color: const Color(0xFFafb4bf),
-                    fontFamily: cred,
+                    fontFamily: gilroy,
                     fontSize: 14.sp,
                   ),
                   textScaleFactor: 1.2,

@@ -35,7 +35,7 @@ class HomePageScreen extends StatelessWidget {
           Text('Hi NaveenSingh',
           style: TextStyle(
           fontSize: 20.sp,
-          fontFamily: cred,
+          fontFamily: gilroy,
           ),
         ),
       ),

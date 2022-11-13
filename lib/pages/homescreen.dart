@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                   Text('Hi there,',
                   style: headingText1.copyWith(
                       color: Colors.white,
-                      fontFamily: cred,
+                      fontFamily: gilroy,
                       fontSize: 20.sp,
                     ),
                     textScaleFactor: 1.2,
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                   Text('I\'m Reflectly,',
                   style: headingText1.copyWith(
                       color: Colors.white,
-                      fontFamily: cred,
+                      fontFamily: gilroy,
                       fontSize: 20.sp,
                     ),
                     textScaleFactor: 1.2,
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                   Text('Your new personal',
                   style: headingText1.copyWith(
                       color: lightVioletColor,
-                      fontFamily: cred,
+                      fontFamily: gilroy,
                       fontSize: 15.sp,
                     ),
                     textScaleFactor: 1.2,
@@ -63,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                     Text('Self care companion',
                   style: headingText1.copyWith(
                       color: lightVioletColor,
-                      fontFamily: cred,
+                      fontFamily: gilroy,
                       fontSize: 15.sp,
                     ),
                     textScaleFactor: 1.2,
@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
             child:  Text('HI, REFLECTLY!',
                       style: headingText1.copyWith(
                           color: homebtnTextColor,
-                          fontFamily: cred,
+                          fontFamily: gilroy,
                           fontWeight: FontWeight.w500,
                           fontSize: 12.sp,
                         ),
@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
             'I ALREADY HAVE AN ACCOUNT!',
             style: headingText1.copyWith(
              color: lightVioletColor,
-            fontFamily: cred,
+            fontFamily: gilroy,
             fontWeight: FontWeight.w500,
             fontSize: 12.sp,
             ),

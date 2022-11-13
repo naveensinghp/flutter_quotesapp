@@ -47,7 +47,7 @@ class ManualSignup extends StatelessWidget {
                 Text('So nice to meet you!, What do',
                   style: headingText1.copyWith(
                       color: Colors.white,
-                      fontFamily: cred,
+                      fontFamily: gilroy,
                       fontSize: 15.sp,
                     ),
                     textScaleFactor: 1.2,
@@ -55,7 +55,7 @@ class ManualSignup extends StatelessWidget {
                 Text('your friends call you?',
                 style: headingText1.copyWith(
                     color: Colors.white,
-                    fontFamily: cred,
+                    fontFamily: gilroy,
                     fontSize: 15.sp,
                   ),
                   textScaleFactor: 1.2,
@@ -85,7 +85,7 @@ class ManualSignup extends StatelessWidget {
           //         Text('So nice to meet you!, What do',
           //         style: headingText1.copyWith(
           //             color: Colors.white,
-          //             fontFamily: cred,
+          //             fontFamily: gilroy,
           //             fontSize: 15.sp,
           //           ),
           //           textScaleFactor: 1.2,
@@ -93,7 +93,7 @@ class ManualSignup extends StatelessWidget {
           //         Text('your friends call you?',
           //         style: headingText1.copyWith(
           //             color: Colors.white,
-          //             fontFamily: cred,
+          //             fontFamily: gilroy,
           //             fontSize: 15.sp,
           //           ),
           //           textScaleFactor: 1.2,
@@ -125,7 +125,7 @@ class ManualSignup extends StatelessWidget {
             child:  Text('Continue',
                       style: headingText1.copyWith(
                           color: homebtnTextColor,
-                          fontFamily: cred,
+                          fontFamily: gilroy,
                           fontWeight: FontWeight.w500,
                           fontSize: 12.sp,
                         ),

@@ -6,21 +6,22 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 class IntroSplashScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => SafeArea(
-      child: IntroductionScreen(
-        pages: [
-          PageViewModel(
-            title: 'A Reader Lives a thousands lives',
-            body: 'The man who never read'
+  Widget build(BuildContext context){
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+
+          Container(
+            padding: EdgeInsets.all(20.0),
+            height: 200.h,
+            width: 200.w,
+            decoration: BoxDecoration(
+                color: Colors.redAccent
+            ),
           )
         ],
-        done: Text('Done',
-          style: TextStyle(
-            fontSize: 20.sp,
-            color: Colors.white,
-            fontFamily: cred,
-          ),
-        ),
-      )
-  );
+      ),
+    );
+  }
 }

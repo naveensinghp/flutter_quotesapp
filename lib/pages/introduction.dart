@@ -18,7 +18,7 @@ class IntroductionScreen extends StatelessWidget {
       body: Center(child: Text('Spash Screen',
           style: TextStyle(
           fontSize: 20.sp,
-          fontFamily: cred,
+          fontFamily: gilroy,
           ),
         ),
       ),
