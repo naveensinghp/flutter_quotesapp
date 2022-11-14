@@ -18,10 +18,18 @@ List<PageViewModel> getPage(){
        // )
      ),
     PageViewModel(
-      image: buildImage('assets/images/logoblack.png'),
-      title: "Welcome, This App helps your belief on about yourself",
-      body: "This App Helps you connect, Worldwide dummy text",
+      image: testImg(),
+      //body: "This App Helps you connect, Worldwide dummy text",
       decoration: getPageDecoration(),
+        bodyWidget: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text("Click on "),
+          Icon(Icons.edit),
+          Text(" to edit a post"),
+        ],
+      ),
+       title: "Welcome, This App helps your belief on about yourself",
     ),
     PageViewModel(
         title: 'Connect With Everyone',
@@ -60,6 +68,22 @@ List<PageViewModel> getPage(){
   ];
 }
 
+Widget testImg(){
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+       Image.asset('assets/images/logoblack.png',width: 200,),
+      Container(
+        height: 100.h,
+        width: 100.w,
+        decoration: BoxDecoration(
+          color: Colors.grey[400],
+           shape: BoxShape.circle,
+        ),
+      )
+    ],
+  );
+}
 Widget buildImage(String path){
   return Center(
     child: Image.asset(path,width: 220),
@@ -91,36 +115,95 @@ PageDecoration getPageDecoration() => PageDecoration(
         context: context,
         orientation: Orientation.portrait);
     return  Scaffold(
-      body: IntroductionScreen(
-        onDone: () {
-        },
-        pages: getPage(),
-        globalBackgroundColor: Colors.white,
-        // next: const SplashScreen(),
-        dotsDecorator: const DotsDecorator(
-          size: Size(10,10),
-          color: profilePageBgColor,
-          activeSize: Size.square(15),
-            activeColor: Colors.redAccent
-        ),
-        showDoneButton: true,
-        done: Text('Know More',
-          style: TextStyle(
-            fontSize: 14.sp,
-            color: Colors.black,
-            fontFamily: gilroy,
+      backgroundColor: Colors.white,
+      body: Stack(
+        fit: StackFit.expand,
+        clipBehavior: Clip.hardEdge,
+        children: [
+          
+           Positioned(
+              top: 150,
+              right: -150,
+              child: Container(
+               height: 250.h,
+               width: 300.w,
+                decoration: const BoxDecoration(
+                  color: srShapeColor,
+                  shape: BoxShape.circle,
+                ), 
+              )
           ),
-        ),
-        next: const Icon(Icons.arrow_forward,size: 20,),
-        showSkipButton: true,
-        skip: Text('Skip',
-        style: TextStyle(
-        fontSize: 14.sp,
-        color: Colors.black,
-        fontFamily: gilroy,
-        ),
+          Positioned(
+              top: 290,
+              right: 65,
+              child: Container(
+               height: 150.h,
+               width: 190.w,
+                margin: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: srShapeColor,
+                  shape: BoxShape.circle,
+                  border: Border.all(width: 6,color: Colors.white)
+                ), 
+              )
+          ),
+          Positioned(
+              top: 55,
+              right: 90,
+              child: Container(
+               height: 150.h,
+               width: 200.w,
+                child: Image.asset('assets/images/logoblack.png',width: 90,), 
+              )
+          ),
+          Positioned(
+              bottom: 120,
+              left: -150,
+              child: Container(
+               height: 150.h,
+               width: 190.w,
+                margin: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  shape: BoxShape.circle,
+                  border: Border.all(width: 6,color: Colors.white)
+                ), 
+              )
+          ),
+        ],
       ),
-      )
+      // body: IntroductionScreen(
+      //   onDone: () {
+      //   },
+      //   pages: getPage(),
+      //   globalBackgroundColor: Colors.white,
+      //   // next: const SplashScreen(),
+      //   dotsDecorator: const DotsDecorator(
+      //     size: Size(10,10),
+      //     color: profilePageBgColor,
+      //     activeSize: Size.square(15),
+      //       activeColor: Colors.redAccent
+      //   ),
+      //   showDoneButton: true,
+      //   done: Text('Know More',
+      //     style: TextStyle(
+      //       fontSize: 14.sp,
+      //       color: Colors.black,
+      //       fontFamily: gilroy,
+      //     ),
+      //   ),
+      //   next: const Icon(Icons.arrow_forward,size: 20,),
+      //   showSkipButton: true,
+      //   skip: Text('Skip',
+      //   style: TextStyle(
+      //   fontSize: 14.sp,
+      //   color: Colors.black,
+      //   fontFamily: gilroy,
+      //   ),
+      // ),
+      // )
     );
   }
   void onDone(){

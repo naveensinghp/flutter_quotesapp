@@ -11,6 +11,7 @@ const lightfont = 'gilroylight';
 const buttonIconColor = Color(0xFF46526d);
 const profilePageBgColor = Color(0xFFf2f7fb);
 const iconColor = Color(0xFF46526d);
+const srShapeColor = Color(0XFFeff0f4);
 
 
 TextStyle headingText1 = const TextStyle(fontFamily: gilroy);
