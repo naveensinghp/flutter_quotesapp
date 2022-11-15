@@ -141,6 +141,13 @@ PageDecoration getPageDecoration() => PageDecoration(
                width: 190.w,
                 margin: const EdgeInsets.all(20),
                 padding: const EdgeInsets.all(10),
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/yoga1.png',
+                    fit: BoxFit.cover,
+                    width: 120.w,
+                    ),
+                ),
                 decoration: BoxDecoration(
                   color: srShapeColor,
                   shape: BoxShape.circle,
@@ -166,10 +173,65 @@ PageDecoration getPageDecoration() => PageDecoration(
                 margin: const EdgeInsets.all(20),
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.yellow,
+                  color: srShapeColor,
                   shape: BoxShape.circle,
                   border: Border.all(width: 6,color: Colors.white)
                 ), 
+              )
+          ),
+          Positioned(
+              bottom: 220,
+              left: 50,
+              child: Container(
+                margin: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    RichText(
+                      text: const TextSpan(
+                        text: 'Eat Organic -',
+                        style: TextStyle(
+                          fontSize: 25,
+                          color: iconColor,
+                          fontFamily: gilroy,
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(text: ' Everyday',
+                          style: TextStyle(
+                            color: Colors.redAccent
+                          )
+                          ),
+                        ]
+                      ),
+                    ),
+                    SizedBox(height: 10.h,),
+                    RichText(
+                      text: const TextSpan(
+                        text: 'We are the supplier of your everyday,',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: iconColor,
+                          fontFamily: gilroy,
+                          
+                        ),
+                      
+                      ),
+                    ),
+                    SizedBox(height: 3.h,),
+                    RichText(
+                      text: const TextSpan(
+                        text: 'grocerices. With all faith on organic food',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: iconColor,
+                          fontFamily: gilroy,
+                        ),
+                      
+                      ),
+                    ),
+                  ],
+                ) 
               )
           ),
         ],
