@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
 import 'package:flutter_quotegenerator/pages/profile/myprofile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ionicons/ionicons.dart';
 
 
 
@@ -17,27 +18,86 @@ class HomePageScreen extends StatelessWidget {
         context: context,
         orientation: Orientation.portrait);
     return  Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.transparent,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12)
-            ),
-            child: pageMenu(context)),
-        ),
-        elevation: 0,
-      ),
-      backgroundColor: Colors.white,
-        body: Center(child: 
-          Text('Hi NaveenSingh',
-          style: TextStyle(
-          fontSize: 20.sp,
-          fontFamily: gilroy,
+      // bottomNavigationBar: BottomAppBar(
+      //   color: Colors.transparent,
+      //   child: Container(
+      //     decoration: BoxDecoration(
+      //       color: Colors.white,
+      //       borderRadius: BorderRadius.circular(12)
+      //     ),
+      //     child: pageMenu(context)),
+      //   elevation: 0,
+      // ),
+      backgroundColor: srShapeColor,
+      //   body: Center(child:
+      //     Text('Hi NaveenSingh',
+      //     style: TextStyle(
+      //     fontSize: 20.sp,
+      //     fontFamily: gilroy,
+      //     ),
+      //   ),
+      // ),
+      body: Stack(
+        fit: StackFit.expand,
+        clipBehavior: Clip.hardEdge,
+        children: [
+          Positioned(
+            bottom: 0,
+              child: Container(
+                height: 90.h,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  color: bg,
+                  borderRadius: BorderRadius.circular(30)
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+
+                    Icon(
+                        Ionicons.home_outline,
+                       size: 30.sp,
+                      color: const Color(0xFF0a060a),
+                    ),
+
+                    Icon(
+                      Ionicons.flash_outline,
+                      size: 30.sp,
+                      color:const Color(0xFF0a060a),
+                    ),
+                    Container(),
+                    Icon(
+                      Icons.home,
+                      size: 30.sp,
+                      color:const Color(0xFF0a060a),
+                    ),
+                    Icon(
+                      Icons.home,
+                      size: 30.sp,
+                      color:const Color(0xFF0a060a),
+                    ),
+                  ],
+                ),
+              ),
           ),
-        ),
+          Positioned(
+            bottom: 50,
+            left: 150,
+            child: Container(
+              height: 70.h,
+              width: 75.w,
+              decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                  borderRadius: BorderRadius.circular(30)
+              ),
+              child: Icon(
+                Ionicons.add_outline,
+                size: 40.sp,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
