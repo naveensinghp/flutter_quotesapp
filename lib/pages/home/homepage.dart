@@ -44,59 +44,132 @@ class HomePageScreen extends StatelessWidget {
           Positioned(
             bottom: 0,
               child: Container(
-                height: 90.h,
+                height: 100.h,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: bg,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(30)
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-
-                    Icon(
-                        Ionicons.home_outline,
-                       size: 30.sp,
-                      color: const Color(0xFF0a060a),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                            Ionicons.home_outline,
+                           size: 25.sp,
+                          color: menuNotActive,
+                        ),
+                        SizedBox(height: 5.h,),
+                        Text('home',
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.normal,
+                            color: menuNotActive
+                          ),
+                        ),
+                      ],
                     ),
 
-                    Icon(
-                      Ionicons.flash_outline,
-                      size: 30.sp,
-                      color:const Color(0xFF0a060a),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Ionicons.flash_outline,
+                          size: 25.sp,
+                          color: Colors.black,
+                        ),
+                        SizedBox(height: 4.h,),
+                        Text('Qutoes',
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontFamily: lightfont,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
-                    Container(),
-                    Icon(
-                      Icons.home,
-                      size: 30.sp,
-                      color:const Color(0xFF0a060a),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Container(
+                        height: 50.h,
+                        width: 55.w,
+                        margin: const EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: Icon(
+                          Ionicons.add_outline,
+                          size: 35.sp,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
-                    Icon(
-                      Icons.home,
-                      size: 30.sp,
-                      color:const Color(0xFF0a060a),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Ionicons.rocket_outline,
+                          size: 30.sp,
+                          color: menuNotActive,
+                        ),
+                        SizedBox(height: 5.h,),
+                        Text('Rewards',
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            color: menuNotActive,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => const MyProfile()));
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Ionicons.bulb_outline,
+                            size: 34.sp,
+                            color: menuNotActive,
+                          ),
+                          SizedBox(height: 5.h,),
+                          Text('Settings',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: lightfont,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
           ),
-          Positioned(
-            bottom: 50,
-            left: 150,
-            child: Container(
-              height: 70.h,
-              width: 75.w,
-              decoration: BoxDecoration(
-                  color: Colors.redAccent,
-                  borderRadius: BorderRadius.circular(30)
-              ),
-              child: Icon(
-                Ionicons.add_outline,
-                size: 40.sp,
-                color: Colors.white,
-              ),
-            ),
-          ),
+          // Positioned(
+          //   bottom: 50,
+          //   left: 150,
+          //   child: Container(
+          //     height: 70.h,
+          //     width: 75.w,
+          //     decoration: BoxDecoration(
+          //         color: Colors.redAccent,
+          //         borderRadius: BorderRadius.circular(30)
+          //     ),
+          //     child: Icon(
+          //       Ionicons.add_outline,
+          //       size: 40.sp,
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
