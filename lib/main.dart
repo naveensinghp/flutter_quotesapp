@@ -1,6 +1,7 @@
  import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/pages/home/homepage.dart';
 import 'package:flutter_quotegenerator/pages/introsplashscreen.dart';
+import 'package:flutter_quotegenerator/pages/profile/myprofile.dart';
 import 'package:flutter_quotegenerator/pages/splashscreen.dart';
 
 
@@ -21,8 +22,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      //  home: IntroSplashScreen(),
-       home: const SplashScreen()
+      home: const MyProfile(),
+       //home: const SplashScreen()
     );
   }
 }

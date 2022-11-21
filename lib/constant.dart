@@ -12,7 +12,8 @@ const buttonIconColor = Color(0xFF46526d);
 const profilePageBgColor = Color(0xFFf2f7fb);
 const iconColor = Color(0xFF46526d);
 const srShapeColor = Color(0XFFeff0f4);
-
+const bg = Color(0XFFfcd9cb);
+const menuNotActive = Color(0xFF6e7275);
 
 TextStyle headingText1 = const TextStyle(fontFamily: gilroy);
 

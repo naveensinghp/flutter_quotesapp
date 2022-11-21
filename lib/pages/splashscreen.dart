@@ -8,63 +8,71 @@ List<PageViewModel> getPage(){
   return [
      PageViewModel(
       image: buildImage('assets/images/logoblack.png'),
-      title: "Welcome, This App helps your belief on about yourself",
+      title: "Screen 1",
       body: "This App Helps you connect, Worldwide dummy text",
       decoration: getPageDecoration(),
-       // bodyWidget: Column(
-       //   children: [
-       //     buildImage('assets/images/logoblack.png'),
-       //   ],
-       // )
+      //  bodyWidget:Stack(
+      //    children: [
+      //      Positioned(
+      //        child: Container(
+      //          height: 250.h,
+      //          width: 250.w,
+      //          decoration: const BoxDecoration(
+      //            color: Colors.redAccent,
+      //            shape: BoxShape.circle,
+      //          ),
+      //        ),
+      //      ),
+      //    ],
+      //  )
      ),
-    PageViewModel(
-      image: testImg(),
-      //body: "This App Helps you connect, Worldwide dummy text",
-      decoration: getPageDecoration(),
-        bodyWidget: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text("Click on "),
-          Icon(Icons.edit),
-          Text(" to edit a post"),
-        ],
-      ),
-       title: "Welcome, This App helps your belief on about yourself",
-    ),
-    PageViewModel(
-        title: 'Connect With Everyone',
-        body: 'Here you can have whatever description you would like to have, you can type it all in here',
-        footer: SizedBox(
-          height: 45,
-          width: 300,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                primary: Colors.green,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)
-                ),
-                elevation: 8
-            ),
-            onPressed: () {},
-            child: const Text("Let's Go", style: TextStyle(fontSize: 20)),
-          ),
-        ),
-        image: Center(
-          child: Image.asset('assets/images/logoblack.png',width: 220,),
-        ),
-        decoration: const PageDecoration(
-            titleTextStyle: TextStyle(
-              fontSize: 25.0,
-              fontWeight: FontWeight.bold,
-            )
-        )
-    ),
-    PageViewModel(
-      image: buildImage('assets/images/logoblack.png'),
-      title: "Welcome, This App helps your belief on about yourself",
-      body: "This App Helps you connect, Worldwide dummy text",
-      decoration: getPageDecoration(),
-    ),
+    // PageViewModel(
+    //     image: testImg(),
+    //     decoration: getPageDecoration(),
+    //     bodyWidget: Row(
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //     children: const [
+    //       Text("Click on "),
+    //       Icon(Icons.edit),
+    //       Text(" to edit a post"),
+    //     ],
+    //   ),
+    //    title: "2, This App helps your belief on about yourself",
+    // ),
+    // PageViewModel(
+    //     title: 'Connect With Everyone',
+    //     body: 'Here you can have whatever description you would like to have, you can type it all in here',
+    //     footer: SizedBox(
+    //       height: 45,
+    //       width: 300,
+    //       child: ElevatedButton(
+    //         style: ElevatedButton.styleFrom(
+    //             primary: Colors.green,
+    //             shape: RoundedRectangleBorder(
+    //                 borderRadius: BorderRadius.circular(20)
+    //             ),
+    //             elevation: 8
+    //         ),
+    //         onPressed: () {},
+    //         child: const Text("Let's Go", style: TextStyle(fontSize: 20)),
+    //       ),
+    //     ),
+    //     image: Center(
+    //       child: Image.asset('assets/images/logoblack.png',width: 220,),
+    //     ),
+    //     decoration: const PageDecoration(
+    //         titleTextStyle: TextStyle(
+    //           fontSize: 25.0,
+    //           fontWeight: FontWeight.bold,
+    //         )
+    //     )
+    // ),
+    // PageViewModel(
+    //   image: buildImage('assets/images/logoblack.png'),
+    //   title: "Welcome, This App helps your belief on about yourself",
+    //   body: "This App Helps you connect, Worldwide dummy text",
+    //   decoration: getPageDecoration(),
+    // ),
   ];
 }
 
@@ -76,49 +84,17 @@ Widget testImg(){
       Container(
         height: 100.h,
         width: 100.w,
-        decoration: BoxDecoration(
-          color: Colors.grey[400],
+        decoration: const BoxDecoration(
+          color: srShapeColor,
            shape: BoxShape.circle,
         ),
       )
     ],
   );
 }
-Widget buildImage(String path){
-  return Center(
-    child: Image.asset(path,width: 220),
-  );
-}
 
-PageDecoration getPageDecoration() => PageDecoration(
-  titleTextStyle: TextStyle(
-    fontSize: 18.sp,
-    color: const Color(0xFF545454),
-    fontFamily: gilroy,
-  ),
-  bodyTextStyle: TextStyle(
-    fontSize: 14.sp,
-    color: const Color(0xFF545454),
-    fontFamily: gilroy,
-  ),
-  titlePadding: EdgeInsets.all(16).copyWith(bottom: 20)
-);
-
-  const SplashScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    ScreenUtil.init(
-        BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width,
-            maxHeight: MediaQuery.of(context).size.height),
-        context: context,
-        orientation: Orientation.portrait);
-    return  Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        fit: StackFit.expand,
-        clipBehavior: Clip.hardEdge,
+Widget screenOne(){
+  return Stack(
         children: [
           
            Positioned(
@@ -158,7 +134,7 @@ PageDecoration getPageDecoration() => PageDecoration(
           Positioned(
               top: 55,
               right: 90,
-              child: Container(
+              child: SizedBox(
                height: 150.h,
                width: 200.w,
                 child: Image.asset('assets/images/logoblack.png',width: 90,), 
@@ -235,7 +211,42 @@ PageDecoration getPageDecoration() => PageDecoration(
               )
           ),
         ],
-      ),
+      );
+}
+
+Widget buildImage(String path){
+  return Center(
+    child: Image.asset(path,width: 220),
+  );
+}
+
+PageDecoration getPageDecoration() => PageDecoration(
+  titleTextStyle: TextStyle(
+    fontSize: 18.sp,
+    color: const Color(0xFF545454),
+    fontFamily: gilroy,
+  ),
+  bodyTextStyle: TextStyle(
+    fontSize: 14.sp,
+    color: const Color(0xFF545454),
+    fontFamily: gilroy,
+  ),
+  titlePadding: EdgeInsets.all(16).copyWith(bottom: 20)
+);
+
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    ScreenUtil.init(
+        BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height),
+        context: context,
+        orientation: Orientation.portrait);
+    return  Scaffold(
+      backgroundColor: Colors.white,
+      body: screenOne(),
       // body: IntroductionScreen(
       //   onDone: () {
       //   },
