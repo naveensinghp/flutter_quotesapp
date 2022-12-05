@@ -299,7 +299,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           color:const Color(0xFF0a060a),
                         ),
                         SizedBox(height: 5.h,),
-                        Text('rewards',
+                        Text('ewards',
                         style: TextStyle(
                             fontSize: 14.sp,
                             fontFamily: lightfont,

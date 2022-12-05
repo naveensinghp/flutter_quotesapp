@@ -3,6 +3,7 @@ import 'package:flutter_quotegenerator/constant.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
+
 class SplashScreen extends StatelessWidget {
 List<PageViewModel> getPage(){
   return [
@@ -96,7 +97,6 @@ Widget testImg(){
 Widget screenOne(){
   return Stack(
         children: [
-          
            Positioned(
               top: 150,
               right: -150,
