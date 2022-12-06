@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
+import 'package:flutter_quotegenerator/pages/profile/myprofile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ionicons/ionicons.dart';
 
@@ -34,6 +35,7 @@ class _BottomMenuState extends State<BottomMenu> {
       'Rewards',
       style: optionStyle,
     ),
+    
     Text(
       'Settings',
       style: optionStyle,
@@ -50,7 +52,6 @@ class _BottomMenuState extends State<BottomMenu> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -62,7 +63,7 @@ class _BottomMenuState extends State<BottomMenu> {
             label: 'Home',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.flash_on_outlined),
             label: 'Qutoes',
           ),
           BottomNavigationBarItem(
@@ -81,11 +82,16 @@ class _BottomMenuState extends State<BottomMenu> {
             label: '',
           ),
          const BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.rocket_launch_outlined),
             label: 'Rewards',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Ionicons.flash_outline,
+           BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: (){
+                 Navigator.push(context,MaterialPageRoute(builder: (context) => MyProfile()));
+              },
+              child: Icon(Ionicons.bulb_outline,
+              ),
             ),
             label: 'Settings',
           ),
@@ -96,5 +102,9 @@ class _BottomMenuState extends State<BottomMenu> {
         selectedLabelStyle: const TextStyle(fontFamily: gilroy),
       ),
     );
+  }
+
+  Widget homeScreen(){
+    return Text('Hello');
   }
 }
