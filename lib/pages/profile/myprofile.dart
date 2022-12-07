@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
+import 'package:flutter_quotegenerator/pages/bottommenu.dart';
 import 'package:flutter_quotegenerator/pages/home/homepage.dart';
 import 'package:flutter_quotegenerator/pages/profile/editprofile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -174,7 +175,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
           iconSize: 28,
           color: buttonIconColor,
           onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePageScreen()));
+            Navigator.push(context,MaterialPageRoute(builder: (context) => const BottomMenu()));
           },
         ),
     );

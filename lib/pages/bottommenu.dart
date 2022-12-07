@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
 import 'package:flutter_quotegenerator/pages/profile/myprofile.dart';
+import 'package:flutter_quotegenerator/pages/splashscreen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ionicons/ionicons.dart';
 
@@ -45,6 +46,10 @@ class _BottomMenuState extends State<BottomMenu> {
    void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      //print('test' +_selectedIndex.toString() );
+      if(_selectedIndex == 4){
+         Navigator.push(context,MaterialPageRoute(builder: (context) => const MyProfile()));
+      }
     });
   }
 
@@ -67,17 +72,22 @@ class _BottomMenuState extends State<BottomMenu> {
             label: 'Qutoes',
           ),
           BottomNavigationBarItem(
-            icon: Container(
-              decoration: const BoxDecoration(
-                color: Colors.redAccent,
-                shape: BoxShape.circle,
+            icon: InkWell(
+              onTap: () {
+                print('To Do List');
+              },
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Colors.redAccent,
+                  shape: BoxShape.circle,
+                ),
+                height: 56,
+                width: 56,
+                child: const Icon(
+                      Ionicons.reader_outline,
+                      color: Colors.white,
+                    ),
               ),
-              height: 56,
-              width: 56,
-              child: const Icon(
-                    Ionicons.reader_outline,
-                    color: Colors.white,
-                  ),
             ),
             label: '',
           ),
@@ -85,13 +95,8 @@ class _BottomMenuState extends State<BottomMenu> {
             icon: Icon(Icons.rocket_launch_outlined),
             label: 'Rewards',
           ),
-           BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: (){
-                 Navigator.push(context,MaterialPageRoute(builder: (context) => MyProfile()));
-              },
-              child: Icon(Ionicons.bulb_outline,
-              ),
+           const BottomNavigationBarItem(
+            icon: Icon(Ionicons.bulb_outline,
             ),
             label: 'Settings',
           ),
