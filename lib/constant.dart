@@ -14,6 +14,8 @@ const iconColor = Color(0xFF46526d);
 const srShapeColor = Color(0XFFeff0f4);
 const bg = Color(0XFFfcd9cb);
 const menuNotActive = Color(0xFF6e7275);
+const textColor = Color(0xFF46526d);
+const profileSubHeading = Color(0xFFafb4bf);
 
 TextStyle headingText1 = const TextStyle(fontFamily: gilroy);
 

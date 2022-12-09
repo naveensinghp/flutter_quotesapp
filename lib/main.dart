@@ -77,8 +77,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BottomMenu(),
-       //home: const SplashScreen()
+     // home: const BottomMenu(),
+       home: const SplashScreen()
     );
   }
 }

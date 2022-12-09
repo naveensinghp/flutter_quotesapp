@@ -4,6 +4,7 @@ import 'package:flutter_quotegenerator/pages/bottommenu.dart';
 import 'package:flutter_quotegenerator/pages/home/homepage.dart';
 import 'package:flutter_quotegenerator/pages/profile/editprofile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 
 
  class MyProfile extends StatelessWidget {
@@ -87,6 +88,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
                   nameEdit()
               ],
             ),
+           ),
+           Positioned(
+           top: 510,
+           right: 30,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  darkModeOptions()
+              ],
+            ),
            )
         ],
       ),
@@ -97,6 +108,90 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
       //     cardTest(),
       //   ],
       // ),
+    );
+  }
+
+  Widget darkModeOptions(){
+    return Container(
+      width: 300.sp,
+      height: 80.h,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(18),
+        boxShadow: const<BoxShadow>[
+            BoxShadow(
+              color: Colors.grey,
+              blurRadius: 15,
+            ),
+        ],
+      ),
+      child: Stack(
+        children: [
+         
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Icon(
+                  Icons.dark_mode_outlined,
+                  size: 100.sp,
+                  color: Colors.grey[100],
+                ),
+            ],
+          ),
+           Padding(
+             padding: const EdgeInsets.all(20.0),
+             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+                 Text('Enabled',
+                            style: headingText1.copyWith(
+                              color: textColor,
+                              fontFamily: gilroy,
+                              fontSize: 15.sp,
+                              letterSpacing: 0.2,
+                            ),
+                            textScaleFactor: 1.2,
+                          ),
+                          SizedBox(height: 5.h,),
+                          Text('DARK MODE',
+                            style: headingText1.copyWith(
+                              color: profileSubHeading,
+                              fontFamily: gilroy,
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w200,
+                              
+                              
+                            ),
+                            textScaleFactor: 1.2,
+                          ),
+                          LiteRollingSwitch(
+                            value: true,
+                            textSize: 18.0,
+                            textOn: "ON",
+                            textOff: "off",
+                            colorOn: Colors.greenAccent,
+                            colorOff: Colors.redAccent,
+                            onTap: (){
+
+                            },
+                            onSwipe: (){
+
+                            },
+                            onDoubleTap: (){
+
+                            },
+                            onChanged: (bool position) {
+                              print('test $position');
+                            },
+                            iconOn: Icons.dark_mode_outlined,
+                            iconOff: Icons.alarm_off,
+                            )
+               ],
+             ),
+           ),
+        ],
+      )
+    
     );
   }
 
