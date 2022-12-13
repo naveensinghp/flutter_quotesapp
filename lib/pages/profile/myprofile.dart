@@ -121,13 +121,12 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
         boxShadow: const<BoxShadow>[
             BoxShadow(
               color: Colors.grey,
-              blurRadius: 15,
+              blurRadius: 12,
             ),
         ],
       ),
       child: Stack(
         children: [
-         
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -138,56 +137,59 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
                 ),
             ],
           ),
-           Padding(
-             padding: const EdgeInsets.all(20.0),
-             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-                 Text('Enabled',
-                            style: headingText1.copyWith(
-                              color: textColor,
-                              fontFamily: gilroy,
-                              fontSize: 15.sp,
-                              letterSpacing: 0.2,
+           Row(
+             crossAxisAlignment: CrossAxisAlignment.start,
+             mainAxisAlignment: MainAxisAlignment.start,
+             children: [
+                        Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Enabled',
+                              style: headingText1.copyWith(
+                                color: textColor,
+                                fontFamily: gilroy,
+                                fontSize: 15.sp,
+                                letterSpacing: 0.2,
+                              ),
+                              textScaleFactor: 1.2,
                             ),
-                            textScaleFactor: 1.2,
-                          ),
-                          SizedBox(height: 5.h,),
-                          Text('DARK MODE',
+                             Text('DARK MODE',
                             style: headingText1.copyWith(
-                              color: profileSubHeading,
-                              fontFamily: gilroy,
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w200,
-                              
-                              
-                            ),
-                            textScaleFactor: 1.2,
+                            color: profileSubHeading,
+                            fontFamily: gilroy,
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w200,
                           ),
-                          LiteRollingSwitch(
-                            value: true,
-                            textSize: 18.0,
-                            textOn: "ON",
-                            textOff: "off",
-                            colorOn: Colors.greenAccent,
-                            colorOff: Colors.redAccent,
-                            onTap: (){
+                          textScaleFactor: 1.2,
+                        ),
+                          ],
+                        ),
+                        const Spacer(),
+                        LiteRollingSwitch(
+                          value: false,
+                          textSize: 17.0,
+                          width: 100,
+                          textOn: "",
+                          textOff: "",
+                          colorOn: Colors.pinkAccent,
+                          colorOff: Colors.redAccent,
+                          onTap: (){
 
-                            },
-                            onSwipe: (){
+                          },
+                          onSwipe: (){
 
-                            },
-                            onDoubleTap: (){
+                          },
+                          onDoubleTap: (){
 
-                            },
-                            onChanged: (bool position) {
-                              print('test $position');
-                            },
-                            iconOn: Icons.dark_mode_outlined,
-                            iconOff: Icons.alarm_off,
-                            )
-               ],
-             ),
+                          },
+                          onChanged: (bool position) {
+                            print('test $position');
+                          },
+                          iconOn: Icons.dark_mode_outlined,
+                          iconOff: Icons.alarm_off,
+                          )
+             ],
            ),
         ],
       )
