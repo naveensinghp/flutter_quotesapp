@@ -121,7 +121,7 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
         boxShadow: const<BoxShadow>[
             BoxShadow(
               color: Colors.grey,
-              blurRadius: 12,
+              blurRadius: 5,
             ),
         ],
       ),
@@ -137,24 +137,26 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
                 ),
             ],
           ),
-           Row(
-             crossAxisAlignment: CrossAxisAlignment.start,
-             mainAxisAlignment: MainAxisAlignment.start,
-             children: [
-                        Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('Enabled',
-                              style: headingText1.copyWith(
-                                color: textColor,
-                                fontFamily: gilroy,
-                                fontSize: 15.sp,
-                                letterSpacing: 0.2,
-                              ),
-                              textScaleFactor: 1.2,
-                            ),
-                             Text('DARK MODE',
+
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Enabled',
+                            style: headingText1.copyWith(
+                            color: textColor,
+                            fontFamily: gilroy,
+                            fontSize: 15.sp,
+                            letterSpacing: 0.2,
+                          ),
+                          textScaleFactor: 1.2,
+                        ),
+                          Text('DARK MODE',
                             style: headingText1.copyWith(
                             color: profileSubHeading,
                             fontFamily: gilroy,
@@ -163,20 +165,17 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
                           ),
                           textScaleFactor: 1.2,
                         ),
-                          ],
-                        ),
-                        const Spacer(),
-                        LiteRollingSwitch(
-                          value: false,
+                        ],
+                      ),
+                      LiteRollingSwitch(
+                          value: true,
                           textSize: 17.0,
-                          width: 100,
+                          width: 95,
                           textOn: "",
                           textOff: "",
                           colorOn: Colors.pinkAccent,
                           colorOff: Colors.redAccent,
-                          onTap: (){
-
-                          },
+                          onTap: (){},
                           onSwipe: (){
 
                           },
@@ -189,8 +188,64 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
                           iconOn: Icons.dark_mode_outlined,
                           iconOff: Icons.alarm_off,
                           )
-             ],
-           ),
+              ],
+            ),
+          )
+
+          //  Row(
+          //    crossAxisAlignment: CrossAxisAlignment.start,
+          //    mainAxisAlignment: MainAxisAlignment.start,
+          //    children: [
+          //               Column(
+          //                  crossAxisAlignment: CrossAxisAlignment.start,
+          //                  mainAxisAlignment: MainAxisAlignment.center,
+          //                 children: [
+          //                   Text('Enabled',
+          //                     style: headingText1.copyWith(
+          //                       color: textColor,
+          //                       fontFamily: gilroy,
+          //                       fontSize: 15.sp,
+          //                       letterSpacing: 0.2,
+          //                     ),
+          //                     textScaleFactor: 1.2,
+          //                   ),
+          //                    Text('DARK MODE',
+          //                   style: headingText1.copyWith(
+          //                   color: profileSubHeading,
+          //                   fontFamily: gilroy,
+          //                   fontSize: 10.sp,
+          //                   fontWeight: FontWeight.w200,
+          //                 ),
+          //                 textScaleFactor: 1.2,
+          //               ),
+          //                 ],
+          //               ),
+          //               const Spacer(),
+          //               LiteRollingSwitch(
+          //                 value: false,
+          //                 textSize: 17.0,
+          //                 width: 100,
+          //                 textOn: "",
+          //                 textOff: "",
+          //                 colorOn: Colors.pinkAccent,
+          //                 colorOff: Colors.redAccent,
+          //                 onTap: (){
+
+          //                 },
+          //                 onSwipe: (){
+
+          //                 },
+          //                 onDoubleTap: (){
+
+          //                 },
+          //                 onChanged: (bool position) {
+          //                   print('test $position');
+          //                 },
+          //                 iconOn: Icons.dark_mode_outlined,
+          //                 iconOff: Icons.alarm_off,
+          //                 )
+          //    ],
+          //  ),
         ],
       )
     
