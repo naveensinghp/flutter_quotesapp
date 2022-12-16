@@ -14,35 +14,6 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: profilePageBgColor,
-      // body: Row(
-      //   children: [
-      //      Column(
-      //        children: [
-      //          profileAvatar(),
-      //        ],
-      //      ),
-      //     //  const Spacer(),
-      //     //  settings(),
-      //     //  SizedBox(width: 10.w,),
-      //     //  closeButton(context),
-      //     //  SizedBox(width: 20.w,),
-         
-      //     Column(
-      //       children: [
-      //         Padding(
-      //           padding: const EdgeInsets.only(top: 120,left: 50),
-      //           child: Row(
-      //             children: [
-      //                settings(),
-      //                SizedBox(width: 10.w,),
-      //                closeButton(context),
-      //             ],
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ],
-      // ),
       body: Stack(
         children: [
           Positioned(
@@ -68,20 +39,24 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
             top: 150,
             left: 200,
             right: 0,
-            child: Center(
-              child: Text('NaveenSingh',
-                      style: headingText1.copyWith(
-                        color: Colors.black,
-                        fontFamily: gilroy,
-                        fontSize: 16.sp,
+            bottom: 0,
+            child: SingleChildScrollView(
+              child: Center(
+                child: Text('NaveenSingh',
+                        style: headingText1.copyWith(
+                          color: Colors.black,
+                          fontFamily: gilroy,
+                          fontSize: 16.sp,
+                        ),
+                        textScaleFactor: 1.2,
                       ),
-                      textScaleFactor: 1.2,
-                    ),
+              ),
             ),
           ),
            Positioned(
-           top: 220,
+           top: 0,
            right: 30,
+           bottom: 100,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -90,24 +65,281 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
             ),
            ),
            Positioned(
-           top: 510,
+           top: 450,
            right: 30,
+            bottom: 150,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                   darkModeOptions()
               ],
             ),
-           )
+           ),
+           Positioned(
+           top: 650,
+           right: 30,
+           bottom: 110,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  positiveRemainder()
+              ],
+            ),
+           ),
+          //  Positioned(
+          //  top: 800,
+          //  right: 30,
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //         positiveRemainder()
+          //     ],
+          //   ),
+          //  ),
         ],
       ),
-      // body: Column(
-      //   children: [
-      //     Center(child: nameEdit()),
-      //     SizedBox(height: 50.h,),
-      //     cardTest(),
-      //   ],
-      // ),
+    );
+    // return Scaffold(
+    //   body: CustomScrollView(
+    //      slivers: [
+    //       SliverFillRemaining(
+    //         child: ListView.builder(
+    //             itemCount: 1,
+    //             itemBuilder: (context,i){
+    //               return Column(
+    //                 crossAxisAlignment: CrossAxisAlignment.start,
+    //                 children: [
+    //                   Stack(
+    //                     children: [
+    //                       Positioned(
+    //                         child: closeButton(context)
+    //                       )
+    //                     ],
+    //                   )
+    //                 ],
+    //               );
+    //             },
+    //             // separatorBuilder: (context, index) {
+    //             //   return const Divider();
+    //             // },
+    //           ),
+    //       )
+
+    //      ]
+    //   ),
+    // );
+  }
+
+Widget test(context){
+  return Stack(
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            child:  profileAvatar(),
+          ),
+          // Positioned(
+          //   top: 70,
+          //   left: 200,
+          //   right: 0,
+          //   child: Row(
+          //     crossAxisAlignment: CrossAxisAlignment.center,
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //       settings(context),
+          //        SizedBox(width: 10.w,),
+          //       closeButton(context)
+          //     ],
+          //  ),
+          // ),
+          //  Positioned(
+          //   top: 150,
+          //   left: 200,
+          //   right: 0,
+          //   bottom: 0,
+          //   child: SingleChildScrollView(
+          //     child: Center(
+          //       child: Text('NaveenSingh',
+          //               style: headingText1.copyWith(
+          //                 color: Colors.black,
+          //                 fontFamily: gilroy,
+          //                 fontSize: 16.sp,
+          //               ),
+          //               textScaleFactor: 1.2,
+          //             ),
+          //     ),
+          //   ),
+          // ),
+          //  Positioned(
+          //  top: 0,
+          //  right: 30,
+          //  bottom: 100,
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //         nameEdit()
+          //     ],
+          //   ),
+          //  ),
+          //  Positioned(
+          //  top: 450,
+          //  right: 30,
+          //   bottom: 150,
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //         darkModeOptions()
+          //     ],
+          //   ),
+          //  ),
+          //  Positioned(
+          //  top: 650,
+          //  right: 30,
+          //  bottom: 110,
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //         positiveRemainder()
+          //     ],
+          //   ),
+          //  ),
+        ],
+      );
+}
+
+Widget positiveRemainder(){
+    return Container(
+      width: 300.sp,
+      height: 80.h,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(18),
+      ),
+      child: Stack(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+             crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Icon(
+                  Icons.notifications_outlined,
+                  size: 90.sp,
+                  color: Colors.grey[100],
+                ),
+            ],
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Disabled',
+                            style: headingText1.copyWith(
+                            color: textColor,
+                            fontFamily: gilroy,
+                            fontSize: 15.sp,
+                            letterSpacing: 0.2,
+                          ),
+                          textScaleFactor: 1.2,
+                        ),
+                        SizedBox(height: 5.h,),
+                          Text('POSITIVE REMINDERS',
+                            style: headingText1.copyWith(
+                            color: profileSubHeading,
+                            fontFamily: gilroy,
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w200,
+                          ),
+                          textScaleFactor: 1.1,
+                        ),
+                        ],
+                      ),
+                      // LiteRollingSwitch(
+                      //     value: true,
+                      //     textSize: 17.0,
+                      //     width: 95,
+                      //     textOn: "",
+                      //     textOff: "",
+                      //     colorOn: Colors.pinkAccent,
+                      //     colorOff: Colors.redAccent,
+                      //     onTap: (){},
+                      //     onSwipe: (){
+
+                      //     },
+                      //     onDoubleTap: (){
+
+                      //     },
+                      //     onChanged: (bool position) {
+                      //       print('test $position');
+                      //     },
+                      //     iconOn: Icons.dark_mode_outlined,
+                      //     iconOff: Icons.alarm_off,
+                      //     )
+              ],
+            ),
+          )
+
+          //  Row(
+          //    crossAxisAlignment: CrossAxisAlignment.start,
+          //    mainAxisAlignment: MainAxisAlignment.start,
+          //    children: [
+          //               Column(
+          //                  crossAxisAlignment: CrossAxisAlignment.start,
+          //                  mainAxisAlignment: MainAxisAlignment.center,
+          //                 children: [
+          //                   Text('Enabled',
+          //                     style: headingText1.copyWith(
+          //                       color: textColor,
+          //                       fontFamily: gilroy,
+          //                       fontSize: 15.sp,
+          //                       letterSpacing: 0.2,
+          //                     ),
+          //                     textScaleFactor: 1.2,
+          //                   ),
+          //                    Text('DARK MODE',
+          //                   style: headingText1.copyWith(
+          //                   color: profileSubHeading,
+          //                   fontFamily: gilroy,
+          //                   fontSize: 10.sp,
+          //                   fontWeight: FontWeight.w200,
+          //                 ),
+          //                 textScaleFactor: 1.2,
+          //               ),
+          //                 ],
+          //               ),
+          //               const Spacer(),
+          //               LiteRollingSwitch(
+          //                 value: false,
+          //                 textSize: 17.0,
+          //                 width: 100,
+          //                 textOn: "",
+          //                 textOff: "",
+          //                 colorOn: Colors.pinkAccent,
+          //                 colorOff: Colors.redAccent,
+          //                 onTap: (){
+
+          //                 },
+          //                 onSwipe: (){
+
+          //                 },
+          //                 onDoubleTap: (){
+
+          //                 },
+          //                 onChanged: (bool position) {
+          //                   print('test $position');
+          //                 },
+          //                 iconOn: Icons.dark_mode_outlined,
+          //                 iconOff: Icons.alarm_off,
+          //                 )
+          //    ],
+          //  ),
+        ],
+      )
+    
     );
   }
 
@@ -118,21 +350,22 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(18),
-        boxShadow: const<BoxShadow>[
-            BoxShadow(
-              color: Colors.grey,
-              blurRadius: 5,
-            ),
-        ],
+        // boxShadow: const<BoxShadow>[
+        //     BoxShadow(
+        //       color: Colors.grey,
+        //       blurRadius: 5,
+        //     ),
+        // ],
       ),
       child: Stack(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
+             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Icon(
                   Icons.dark_mode_outlined,
-                  size: 100.sp,
+                  size: 90.sp,
                   color: Colors.grey[100],
                 ),
             ],
@@ -140,7 +373,6 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 
           Padding(
             padding: const EdgeInsets.all(25.0),
-            
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -156,6 +388,7 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
                           ),
                           textScaleFactor: 1.2,
                         ),
+                        SizedBox(height: 5.h,),
                           Text('DARK MODE',
                             style: headingText1.copyWith(
                             color: profileSubHeading,
@@ -167,27 +400,27 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
                         ),
                         ],
                       ),
-                      LiteRollingSwitch(
-                          value: true,
-                          textSize: 17.0,
-                          width: 95,
-                          textOn: "",
-                          textOff: "",
-                          colorOn: Colors.pinkAccent,
-                          colorOff: Colors.redAccent,
-                          onTap: (){},
-                          onSwipe: (){
+                      // LiteRollingSwitch(
+                      //     value: true,
+                      //     textSize: 17.0,
+                      //     width: 95,
+                      //     textOn: "",
+                      //     textOff: "",
+                      //     colorOn: Colors.pinkAccent,
+                      //     colorOff: Colors.redAccent,
+                      //     onTap: (){},
+                      //     onSwipe: (){
 
-                          },
-                          onDoubleTap: (){
+                      //     },
+                      //     onDoubleTap: (){
 
-                          },
-                          onChanged: (bool position) {
-                            print('test $position');
-                          },
-                          iconOn: Icons.dark_mode_outlined,
-                          iconOff: Icons.alarm_off,
-                          )
+                      //     },
+                      //     onChanged: (bool position) {
+                      //       print('test $position');
+                      //     },
+                      //     iconOn: Icons.dark_mode_outlined,
+                      //     iconOff: Icons.alarm_off,
+                      //     )
               ],
             ),
           )
