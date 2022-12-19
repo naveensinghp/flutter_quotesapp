@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
 import 'package:flutter_quotegenerator/pages/profile/myprofile.dart';
-import 'package:flutter_quotegenerator/pages/splashscreen.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ionicons/ionicons.dart';
 
 
@@ -37,16 +35,15 @@ class _BottomMenuState extends State<BottomMenu> {
       style: optionStyle,
     ),
     
-    Text(
-      'Settings',
-      style: optionStyle,
-    ),
+    // Text(
+    //   'Settings',
+    //   style: optionStyle,
+    // ),
   ];
 
    void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      //print('test' +_selectedIndex.toString() );
       if(_selectedIndex == 4){
          Navigator.push(context,MaterialPageRoute(builder: (context) => const MyProfile()));
       }
@@ -74,7 +71,7 @@ class _BottomMenuState extends State<BottomMenu> {
           BottomNavigationBarItem(
             icon: InkWell(
               onTap: () {
-                print('To Do List');
+                
               },
               child: Container(
                 decoration: const BoxDecoration(

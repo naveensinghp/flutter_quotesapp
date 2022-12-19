@@ -6,6 +6,8 @@ import 'package:flutter_quotegenerator/pages/profile/myprofile.dart';
 import 'package:flutter_quotegenerator/pages/splashscreen.dart';
 import 'dart:developer' as devtools show log;
 
+import 'package:flutter_quotegenerator/pages/swiper.dart';
+
 extension Log on Object{
   void log() => devtools.log(toString());
 }
@@ -77,8 +79,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-     // home: const BottomMenu(),
-       home: const SplashScreen()
+       //home: SwiperTest(),
+      home: const SplashScreen()
     );
   }
 }

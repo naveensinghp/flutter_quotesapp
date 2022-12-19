@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
+import 'package:flutter_quotegenerator/pages/bottommenu.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 
@@ -94,7 +96,7 @@ Widget testImg(){
   );
 }
 
-Widget screenOne(){
+Widget screenOne(context){
   return Stack(
         children: [
            Positioned(
@@ -117,12 +119,22 @@ Widget screenOne(){
                width: 190.w,
                 margin: const EdgeInsets.all(20),
                 padding: const EdgeInsets.all(10),
-                child: Center(
-                  child: Image.asset(
-                    'assets/images/yoga1.png',
-                    fit: BoxFit.cover,
-                    width: 120.w,
-                    ),
+                // child: Center(
+                //   child: Image.asset(
+                //     'assets/images/yoga1.png',
+                //     fit: BoxFit.cover,
+                //     width: 120.w,
+                //     ),
+                // ),
+                child: Swiper(
+                  itemBuilder: (BuildContext context,int index){
+                    return Image.asset('assets/images/yoga1.png');
+                  },
+                  itemCount: 3,
+                  pagination: const SwiperPagination(),
+                  //control: const SwiperControl(),
+                 
+                  scrollDirection: Axis.horizontal,
                 ),
                 decoration: BoxDecoration(
                   color: srShapeColor,
@@ -137,7 +149,12 @@ Widget screenOne(){
               child: SizedBox(
                height: 150.h,
                width: 200.w,
-                child: Image.asset('assets/images/logoblack.png',width: 90,), 
+                child: InkWell(
+                  onTap: (){
+                     Navigator.push(context,MaterialPageRoute(builder: (context) => const BottomMenu()));
+                  },
+                  child: Image.asset('assets/images/logoblack.png',width: 90,)
+                  ), 
               )
           ),
           Positioned(
@@ -246,7 +263,16 @@ PageDecoration getPageDecoration() => PageDecoration(
         orientation: Orientation.portrait);
     return  Scaffold(
       backgroundColor: Colors.white,
-      body: screenOne(),
+      body: screenOne(context),
+      // body: Swiper(
+      //   itemBuilder: (BuildContext context,int index){
+      //     return Image.asset('assets/images/logoblack.png');
+      //   },
+      //    itemCount: 3,
+      //    pagination: const SwiperPagination(),
+      //    control: const SwiperControl(),
+      //    scrollDirection: Axis.vertical,
+      // )
       // body: IntroductionScreen(
       //   onDone: () {
       //   },

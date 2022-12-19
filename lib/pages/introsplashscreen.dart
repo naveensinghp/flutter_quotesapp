@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_quotegenerator/constant.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:introduction_screen/introduction_screen.dart';
 
 
 class IntroSplashScreen extends StatelessWidget {
