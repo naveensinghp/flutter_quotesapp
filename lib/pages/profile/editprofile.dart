@@ -102,7 +102,7 @@ class EditProfile extends StatelessWidget {
   Widget nameEdit(){
     return Container(
       width: 300.sp,
-      height: 200.h,
+      height: 100.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(18),
@@ -122,7 +122,7 @@ class EditProfile extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: Text('NaveenSingh',
+                  child: Text('aveenSingh',
                     style: headingText1.copyWith(
                         color: const Color(0xFF56617a),
                         fontFamily: gilroy,

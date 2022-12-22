@@ -56,7 +56,7 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
            Positioned(
            top: 0,
            right: 30,
-           bottom: 100,
+           bottom: 200,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -65,9 +65,9 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
             ),
            ),
            Positioned(
-           top: 450,
+           top: 220,
            right: 30,
-            bottom: 150,
+            bottom: 0,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -76,9 +76,9 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
             ),
            ),
            Positioned(
-           top: 650,
+           top: 470,
            right: 30,
-           bottom: 110,
+           bottom: 0,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -86,16 +86,6 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
               ],
             ),
            ),
-          //  Positioned(
-          //  top: 800,
-          //  right: 30,
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //         positiveRemainder()
-          //     ],
-          //   ),
-          //  ),
         ],
       ),
     );
