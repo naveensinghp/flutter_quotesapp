@@ -86,6 +86,28 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
               ],
             ),
            ),
+           Positioned(
+           top: 470,
+           right: 30,
+           bottom: 0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  positiveRemainder()
+              ],
+            ),
+           ),
+           Positioned(
+           top: 470,
+           right: 30,
+           bottom: 0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  positiveRemainder()
+              ],
+            ),
+           ),
         ],
       ),
     );

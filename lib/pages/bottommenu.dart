@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
 import 'package:flutter_quotegenerator/pages/profile/myprofile.dart';
+import 'package:flutter_quotegenerator/pages/qutoes/qutoes.dart';
+import 'package:flutter_quotegenerator/pages/reward/reward.dart';
+import 'package:flutter_quotegenerator/pages/swiper.dart';
+import 'package:flutter_quotegenerator/pages/todo/todo.dart';
+import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:ionicons/ionicons.dart';
 
 
@@ -13,6 +18,7 @@ class BottomMenu extends StatefulWidget {
 
 class _BottomMenuState extends State<BottomMenu> {
  int _selectedIndex = 0;
+ final _buildBody = const <Widget>[Reward(),Reward(),Qutoes(),ToDo(),MyProfile()];
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30,
       fontFamily: gilroy, 
@@ -43,6 +49,7 @@ class _BottomMenuState extends State<BottomMenu> {
 
    void _onItemTapped(int index) {
     setState(() {
+      print(_selectedIndex);
       _selectedIndex = index;
       if(_selectedIndex == 4){
          Navigator.push(context,MaterialPageRoute(builder: (context) => const MyProfile()));
@@ -54,9 +61,10 @@ class _BottomMenuState extends State<BottomMenu> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      // body: Center(
+      //   child: _widgetOptions.elementAt(_selectedIndex),
+      // ),
+      
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
@@ -69,22 +77,17 @@ class _BottomMenuState extends State<BottomMenu> {
             label: 'Qutoes',
           ),
           BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                
-              },
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.redAccent,
-                  shape: BoxShape.circle,
-                ),
-                height: 56,
-                width: 56,
-                child: const Icon(
-                      Ionicons.reader_outline,
-                      color: Colors.white,
-                    ),
+            icon: Container(
+              decoration: const BoxDecoration(
+                color: Colors.redAccent,
+                shape: BoxShape.circle,
               ),
+              height: 56,
+              width: 56,
+              child: const Icon(
+                    Ionicons.reader_outline,
+                    color: Colors.white,
+                  ),
             ),
             label: '',
           ),
@@ -97,12 +100,19 @@ class _BottomMenuState extends State<BottomMenu> {
             ),
             label: 'Settings',
           ),
+        
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.redAccent,
-        onTap: _onItemTapped,
+        //onTap: _onItemTapped,
+        onTap: (x){
+          setState(() {
+            _selectedIndex = x;
+          });
+        },
         selectedLabelStyle: const TextStyle(fontFamily: gilroy),
       ),
+      body: _buildBody[_selectedIndex],
     );
   }
 

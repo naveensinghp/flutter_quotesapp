@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quotegenerator/pages/bottommenu.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 
 
@@ -22,7 +23,8 @@ class SwiperTest extends StatelessWidget {
          pagination: const SwiperPagination(),
          control: const SwiperControl(),
          scrollDirection: Axis.vertical,
-      )
+      ),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }
