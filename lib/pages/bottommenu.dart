@@ -40,31 +40,14 @@ class _BottomMenuState extends State<BottomMenu> {
       'Rewards',
       style: optionStyle,
     ),
-    
-    // Text(
-    //   'Settings',
-    //   style: optionStyle,
-    // ),
   ];
 
-   void _onItemTapped(int index) {
-    setState(() {
-      print(_selectedIndex);
-      _selectedIndex = index;
-      if(_selectedIndex == 4){
-         Navigator.push(context,MaterialPageRoute(builder: (context) => const MyProfile()));
-      }
-    });
-  }
+  
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      // body: Center(
-      //   child: _widgetOptions.elementAt(_selectedIndex),
-      // ),
-      
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
@@ -116,7 +99,4 @@ class _BottomMenuState extends State<BottomMenu> {
     );
   }
 
-  Widget homeScreen(){
-    return Text('Hello');
-  }
 }
