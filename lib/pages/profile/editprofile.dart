@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constant.dart';
 
 class EditProfile extends StatelessWidget {
-  const EditProfile({ Key? key }) : super(key: key);
+   final ScrollController _controller = ScrollController();
+  EditProfile({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +15,28 @@ class EditProfile extends StatelessWidget {
       body: Stack(
       children: [
           Positioned(
-              top: 120,
-              left: 20,
+              top: 10,
+              left: 0,
+              child: SizedBox(
+              width: 250.w,
+              height: 625.h,
+            child: ListView.builder(
+              controller: _controller,
+              itemCount: 10,
+                itemBuilder: (context,i){
+                  return Container(
+                    height: 50,
+                    width: 200,
+                    color: Colors.amber[500],
+                    child: Center(child: Text('Item $i')),
+                  );
+                }
+                ),
+              ),
+          ),
+          Positioned(
+              top: 100,
+              left: 25,
               child: Container(
                 decoration: BoxDecoration(
                   boxShadow: const<BoxShadow>[
@@ -29,74 +50,41 @@ class EditProfile extends StatelessWidget {
                 ),
                 child: IconButton(
                   iconSize: 18.sp,
-                onPressed: () {
-                  Navigator.pop(context);
-                }, 
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }, 
                 icon: const Icon(Icons.west),
                 color: iconColor,
                 ),
               )
           ),
-          Positioned(
-              top: 110,
-              right: 10,
-              child: SizedBox(
-              width: 150.w,
-              height: 125.h,
-            //   child: ListView(
-            //   padding: const EdgeInsets.all(8),
-            //   children: <Widget>[
-            //     Container(
-            //       height: 150,
-            //         child: Center(child: Icon(
-            //           Icons.photo_camera,
-            //           size: 60.sp,
-            //           color: const Color(0xFF01c0c9),
-            //         ),
-            //       ),
-            //        decoration: BoxDecoration(
-            //       gradient: const LinearGradient(
-            //         begin: Alignment.topRight,
-            //             end: Alignment.bottomLeft,
-            //             colors: [
-            //               Color(0xFF00c6d4),
-            //               Color(0xFF00dcd3),
-            //         ]
-            //       ),
-            //       color: Colors.green,
-            //       borderRadius: BorderRadius.circular(12.h)
-            //     )
-            //     ),
-                
-
-                
-            //     Container(
-            //       height: 50,
-            //       color: Colors.amber[500],
-            //       child: const Center(child: Text('Entry B')),
-            //     ),
-            //     Container(
-            //       height: 50,
-            //       color: Colors.amber[100],
-            //       child: const Center(child: Text('Entry C')),
-            //     ),
-            //   ],
-            // ),
-            child: ListView.builder(
-              itemCount: 6,
-              itemBuilder: (context,i){
-                return Container(
-                  height: 50,
-                  color: Colors.amber[500],
-                  child: const Center(child: Text('Entry B')),
-                );
-              }
-              ),
-      
-              ),
-          ),
         ],
       ),
+    );
+  }
+
+  Widget profileAvatar(){
+    return Container(
+      width: 150.w,
+      height: 130.h,
+      child: Center(child: Icon(
+                    Icons.person,
+                    size: 60.sp,
+                    color: const Color(0xFF01c0c9),
+                  ),
+                ),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Color(0xFF00c6d4),
+                  Color(0xFF00dcd3),
+            ]
+          ),
+          color: Colors.green,
+          borderRadius: BorderRadius.circular(20)
+        ),
     );
   }
   Widget nameEdit(){
