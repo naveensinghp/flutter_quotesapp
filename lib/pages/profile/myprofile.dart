@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quotegenerator/constant.dart';
 import 'package:flutter_quotegenerator/pages/bottommenu.dart';
-import 'package:flutter_quotegenerator/pages/home/homepage.dart';
 import 'package:flutter_quotegenerator/pages/profile/editprofile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 
 
  class MyProfile extends StatelessWidget {
@@ -56,7 +54,7 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
            Positioned(
            top: 0,
            right: 30,
-           bottom: 200,
+           bottom: 100,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -65,7 +63,7 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
             ),
            ),
            Positioned(
-           top: 220,
+           top: 240,
            right: 30,
             bottom: 0,
             child: Row(
@@ -76,7 +74,7 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
             ),
            ),
            Positioned(
-           top: 470,
+           top: 270,
            right: 30,
            bottom: 0,
             child: Row(
@@ -98,7 +96,7 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
             ),
            ),
            Positioned(
-           top: 470,
+           top: 670,
            right: 30,
            bottom: 0,
             child: Row(
@@ -111,113 +109,9 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
         ],
       ),
     );
-    // return Scaffold(
-    //   body: CustomScrollView(
-    //      slivers: [
-    //       SliverFillRemaining(
-    //         child: ListView.builder(
-    //             itemCount: 1,
-    //             itemBuilder: (context,i){
-    //               return Column(
-    //                 crossAxisAlignment: CrossAxisAlignment.start,
-    //                 children: [
-    //                   Stack(
-    //                     children: [
-    //                       Positioned(
-    //                         child: closeButton(context)
-    //                       )
-    //                     ],
-    //                   )
-    //                 ],
-    //               );
-    //             },
-    //             // separatorBuilder: (context, index) {
-    //             //   return const Divider();
-    //             // },
-    //           ),
-    //       )
-
-    //      ]
-    //   ),
-    // );
   }
 
-Widget test(context){
-  return Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            child:  profileAvatar(),
-          ),
-          // Positioned(
-          //   top: 70,
-          //   left: 200,
-          //   right: 0,
-          //   child: Row(
-          //     crossAxisAlignment: CrossAxisAlignment.center,
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //       settings(context),
-          //        SizedBox(width: 10.w,),
-          //       closeButton(context)
-          //     ],
-          //  ),
-          // ),
-          //  Positioned(
-          //   top: 150,
-          //   left: 200,
-          //   right: 0,
-          //   bottom: 0,
-          //   child: SingleChildScrollView(
-          //     child: Center(
-          //       child: Text('NaveenSingh',
-          //               style: headingText1.copyWith(
-          //                 color: Colors.black,
-          //                 fontFamily: gilroy,
-          //                 fontSize: 16.sp,
-          //               ),
-          //               textScaleFactor: 1.2,
-          //             ),
-          //     ),
-          //   ),
-          // ),
-          //  Positioned(
-          //  top: 0,
-          //  right: 30,
-          //  bottom: 100,
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //         nameEdit()
-          //     ],
-          //   ),
-          //  ),
-          //  Positioned(
-          //  top: 450,
-          //  right: 30,
-          //   bottom: 150,
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //         darkModeOptions()
-          //     ],
-          //   ),
-          //  ),
-          //  Positioned(
-          //  top: 650,
-          //  right: 30,
-          //  bottom: 110,
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //         positiveRemainder()
-          //     ],
-          //   ),
-          //  ),
-        ],
-      );
-}
+
 
 Widget positiveRemainder(){
     return Container(
@@ -547,7 +441,7 @@ Widget positiveRemainder(){
           iconSize: 28,
           color: buttonIconColor,
           onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context) => const EditProfile()));
+            Navigator.push(context,MaterialPageRoute(builder: (context) => EditProfile()));
           },
         ),
     );
